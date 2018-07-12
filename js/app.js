@@ -232,7 +232,7 @@ window.btoa = window.btoa || function () {
         output = $(this).serializeObject();
         output.event = "wizardStep1Sent";
         output.formId = "Wizard";
-        output.formStep = "1";
+        output.formStep = "2";
         output.errors = [];
 
         measure(output);
@@ -252,7 +252,8 @@ window.btoa = window.btoa || function () {
     eventData = $(this).serializeObject();
     eventData.formId = "Wizard";
     eventData.event = "wizardStep2Sent";
-    output.errors = [];
+    eventData.formStep = "3";
+    eventData.errors = [];
 
     measure(eventData);
 
