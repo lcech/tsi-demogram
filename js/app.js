@@ -166,8 +166,8 @@ window.btoa = window.btoa || function () {
     $target = $(event.target);
     linkHref = $target.attr("href");
     fileType = linkHref.split(".").pop().toUpperCase();
-    fileDescription = $target.getAttribute("data-name");
-    filePosition = $target.getAttribute("data-position");
+    fileDescription = this.getAttribute("data-name");
+    filePosition = this.getAttribute("data-position");
 
     measure({event: "fileDownload", fileName: linkHref, fileType: fileType, fileDescription: fileDescription, filePosition: filePosition});
     setTimeout(function() {
