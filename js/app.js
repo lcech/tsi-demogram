@@ -156,16 +156,20 @@ window.btoa = window.btoa || function () {
 
   $(".download").on("click", function(event) {
     var $target,
-      linkHref,
-      fileType;
+        linkHref,
+        fileType,
+        fileName,
+        filePosition;
 
     event.preventDefault();
 
     $target = $(event.target);
     linkHref = $target.attr("href");
     fileType = linkHref.split(".").pop().toUpperCase();
+    fileName = $target.getAttribute("data-name");
+    filePosition = $target.getAttribute("data-position");
 
-    measure({event: "fileDownload", fileName: linkHref, fileType: fileType});
+    measure({event: "fileDownload", fileName: linkHref, fileType: fileType, fileName: fileName, filePosition: filePosition});
     setTimeout(function() {
       window.location = linkHref;
     }, 500);
