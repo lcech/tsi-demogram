@@ -283,5 +283,13 @@ window.btoa = window.btoa || function () {
       tabName: $(e.target).text().trim()
     });
   })
+  
+  $('.panel').on('shown.bs.collapse', function (e) {
+	  var faqText = $(e.currentTarget).text().trim();
+    measure({
+      event: "faqTabClick",
+      faqTabName: faqText.substring(0,faqText.indexOf("?")+1)
+    });
+  })
 
 })(jQuery);
